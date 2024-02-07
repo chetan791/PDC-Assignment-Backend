@@ -13,7 +13,7 @@ userRouter.post("/register", async (req, res) => {
       res.send("User already exists");
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
-      const user = new userModel.create({
+      const user = new userModel({
         name,
         email,
         password: hashedPassword,
