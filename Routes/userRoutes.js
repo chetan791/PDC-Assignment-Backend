@@ -19,7 +19,7 @@ userRouter.post("/register", async (req, res) => {
         password: hashedPassword,
       });
       await user.save();
-      res.send("User created successfully");
+      res.send({ msg: "User created successfully" });
     }
   } catch (error) {
     res.send(error);
